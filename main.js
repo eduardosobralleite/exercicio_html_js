@@ -1,4 +1,7 @@
 const form = document.getElementById ('form-atividade');
+const campoA = document.getElementById("campoA");
+const campoB = document.getElementById("campoB");
+let validaForm = false;
 
 function validaForm(oForms) {
     const formComoArray = oForms.split(' ');
@@ -6,19 +9,20 @@ function validaForm(oForms) {
 }
 
 form.addEventListener('submit', function(e) {
-    let validaForm = false;
     e.preventDefault();
 
     campoA = parseInt(inputcampoA);
     campoB = parseInt(inputcampoB);
 
-    const campoA = document.getElementById("campoA").value;
-    const campoB = document.getElementById("campoB").value;
     const mensagemSucesso = `campoA é maior ou igual a CampoB`;
     const mensagemErro = `campoB é maior ou igual a CampoA`; 
 
-    if (campoA < campoB){
-    const containerMensagemSucesso = document.querySelector('.sucess-mensagem');
+    formValido = validaForm(oForms.value);
+    
+    if (formValido) {
+
+    campoB >= campoA;
+    const containerMensagemSucesso = document.querySelector('.sucess-message');
     containerMensagemSucesso.innerHTML = mensagemSucesso;
     containerMensagemSucesso.style.display = 'block';
 
@@ -26,8 +30,30 @@ form.addEventListener('submit', function(e) {
     campoB.value = '';
 
     } else { 
-        (campoA === campoB) 
-    document.querySelector('.erro-mensagem').style.display = 'block';
+        campoA.style.border = '1px solid red';
+        campoB.style.border = '1px solid red';
+    document.querySelector('.error-message').style.display = 'block';
     }
 
     })
+
+    campoA.addEventListener('keyup',function(e) {
+        console.log(e.target.value);
+        formValido = validaForm(e.target.value);
+    });
+
+    campoB.addEventListener('keyup',function(e) {
+        console.log(e);
+        formValido = validaForm(e.target.value);
+
+        if (!formValido) { 
+                campoA.style.border = '1px solid red';
+                campoB.style.border = '1px solid red';
+            document.querySelector('.error-message').style.display = 'block';
+            } else {
+                campoA.style = '';
+                campoA.style = '';
+                document.querySelector('.error-message').style.display = 'none';
+            }
+
+    });
