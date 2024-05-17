@@ -37,21 +37,21 @@ button {
 }
 
 button:hover {
-    background-color: #208a8a;
+    background-color: #2ecccc;
 }
 
 .sucess-message {
-    background-color: #208a8a;
-    padding: 16px;
-    color: #fff;
+    background-color: #2ecccc;
+    padding: 8px;
+    color: black;
     display: none;
 }
 
 .error-message {
     background-color: red;
-    padding: 16px;
+    padding: 8px;
     margin-top: 8px;
     margin-bottom: 8px;
-    color: #fff;
+    color:black;
     display: none;
 }

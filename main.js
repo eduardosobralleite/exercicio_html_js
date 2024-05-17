@@ -11,10 +11,10 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const valorA = campoA.value;
-    const ValorB = camporB.value;
+    const valorB = campoB.value;
 
-    const mensagemSucesso = `campoB é maior ou igual a CampoA`;
-    const mensagemErro = `campoA é maior ou igual a CampoB`; 
+    const mensagemSucesso = `Campo B é maior que o Campo A`;
+    const mensagemErro = `Campo B é menor que o Campo A`; 
 
     formValido = atribuiForm(valorA, valorB); //Aqui é passado os 2 parâmentros a serem validados
     
@@ -32,7 +32,7 @@ form.addEventListener('submit', function(e) {
     } else { 
         campoA.style.border = '1px solid red';
         campoB.style.border = '1px solid red';
-    document.querySelector('error-message').innerHTML = mensagemErro; //Aqui vai ficar a mensagem de erro
+    document.querySelector('.error-message').innerHTML = mensagemErro; //Aqui vai ficar a mensagem de erro
     document.querySelector('.error-message').style.display = 'block'; //Exibi a mesma
     }
 
